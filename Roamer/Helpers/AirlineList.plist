@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>name</key>
+            <string>Frontier</string>
+            <key>value</key>
+            <string>01</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Virgin America</string>
+            <key>value</key>
+            <string>02</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>JetBlue</string>
+            <key>value</key>
+            <string>03</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Alaska</string>
+            <key>value</key>
+            <string>04</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Southwest</string>
+            <key>value</key>
+            <string>05</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Delta</string>
+            <key>value</key>
+            <string>06</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>AirTran</string>
+            <key>value</key>
+            <string>07</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>U.S. Airways</string>
+            <key>value</key>
+            <string>08</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>American Airlines</string>
+            <key>value</key>
+            <string>09</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>United</string>
+            <key>value</key>
+            <string>10</string>
+        </dict>
+    </array>
+</plist>
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ChatDB" representedClassName="ChatDB" syncable="YES">
+        <attribute name="dateReceived" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="isViewed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="myusername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Events" representedClassName="Events" syncable="YES">
+        <attribute name="attend" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blurb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="host" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hostimage" optional="YES" attributeType="Transformable" valueTransformerName="" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Roamers" representedClassName="Roamers" syncable="YES">
+        <attribute name="airlinepref" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hotelpref" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" valueTransformerName="" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="ismyroamer" optional="YES" attributeType="Integer 16" defaultValueString="1" syncable="YES"/>
+        <attribute name="jobposition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roamsincedate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="rowId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
+        <attribute name="airline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emailId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hotel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" valueTransformerName="" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="industry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ChatDB" positionX="0" positionY="81" width="128" height="135"/>
+        <element name="Events" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="Roamers" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="UserInfo" positionX="0" positionY="0" width="128" height="210"/>
+    </elements>
+</model>

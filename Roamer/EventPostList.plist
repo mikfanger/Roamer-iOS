@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>name</key>
+            <string>At Airport</string>
+            <key>value</key>
+            <string>01</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Concert/Festival</string>
+            <key>value</key>
+            <string>02</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Dinner/Meal</string>
+            <key>value</key>
+            <string>03</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Drinks</string>
+            <key>value</key>
+            <string>04</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Professional/Seminar</string>
+            <key>value</key>
+            <string>05</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Sporting Event</string>
+            <key>value</key>
+            <string>06</string>
+        </dict>
+    </array>
+</plist>
