@@ -195,6 +195,17 @@
     [self slideInLocViewAnimation];
 }
 
+- (IBAction)onBackFromSortAction:(id)sender {
+    self.mSortDateLabel.text = @"";
+    self.mSortTimeLabel.text = @"";
+    self.mSortTypeLabel.text = @"";
+    timeSort = -1;
+    typeSort = -1;
+    sortStartDate = nil;
+    sortEndDate = nil;
+    currentPredicate = nil;
+    [self slideOutLocViewAnimation];
+}
 - (IBAction)onSortByDateAction:(id)sender {
     fromSelectSort = TRUE;
     [self performSegueWithIdentifier:@"performSortDateSelector" sender:self];

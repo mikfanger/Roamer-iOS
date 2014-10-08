@@ -147,7 +147,6 @@
 		7E70CBF818CE184B00796201 /* MyRoamersViewCntrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E70CBF718CE184B00796201 /* MyRoamersViewCntrl.m */; };
 		7E70CBFB18CE236400796201 /* RoamerProfileViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E70CBFA18CE236400796201 /* RoamerProfileViewCtrl.m */; };
 		7E7F2EB0193D1341003D5D38 /* SortDateSelectorViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F2EAF193D1341003D5D38 /* SortDateSelectorViewCtrl.m */; };
-		7E93754418F7144A008806BF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93754318F7144A008806BF /* Parse.framework */; };
 		7E93754D18F714BB008806BF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93754518F714BB008806BF /* AudioToolbox.framework */; };
 		7E93754E18F714BB008806BF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93754618F714BB008806BF /* CFNetwork.framework */; };
 		7E93754F18F714BB008806BF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93754718F714BB008806BF /* CoreLocation.framework */; };
@@ -184,6 +183,10 @@
 		7EEAD3CA18C622CC00BF5C98 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD3C918C622CC00BF5C98 /* HomeViewController.m */; };
 		7EEAD43618C6704000BF5C98 /* FindRoamersViewCntrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD43518C6704000BF5C98 /* FindRoamersViewCntrl.m */; };
 		7EEAD43918C6721300BF5C98 /* FindRoamersHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD43818C6721300BF5C98 /* FindRoamersHelper.m */; };
+		9A692FFD19DCFB2900FD2476 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A692FFC19DCFB2900FD2476 /* Parse.framework */; };
+		9A692FFE19DCFB2900FD2476 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A692FFC19DCFB2900FD2476 /* Parse.framework */; };
+		9AE6CDC719E392D70008EE8C /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6CDC619E392D70008EE8C /* select.png */; };
+		9AE6CDC919E392E50008EE8C /* new_message2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6CDC819E392E50008EE8C /* new_message2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -366,7 +369,6 @@
 		7E70CBFA18CE236400796201 /* RoamerProfileViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoamerProfileViewCtrl.m; path = ViewControllers/RoamerProfileViewCtrl.m; sourceTree = "<group>"; };
 		7E7F2EAE193D1341003D5D38 /* SortDateSelectorViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SortDateSelectorViewCtrl.h; path = ViewControllers/SortDateSelectorViewCtrl.h; sourceTree = "<group>"; };
 		7E7F2EAF193D1341003D5D38 /* SortDateSelectorViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SortDateSelectorViewCtrl.m; path = ViewControllers/SortDateSelectorViewCtrl.m; sourceTree = "<group>"; };
-		7E93754318F7144A008806BF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7E93754518F714BB008806BF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7E93754618F714BB008806BF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7E93754718F714BB008806BF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -423,6 +425,9 @@
 		7EEAD43518C6704000BF5C98 /* FindRoamersViewCntrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindRoamersViewCntrl.m; path = ViewControllers/FindRoamersViewCntrl.m; sourceTree = "<group>"; };
 		7EEAD43718C6721300BF5C98 /* FindRoamersHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindRoamersHelper.h; path = Helpers/FindRoamersHelper.h; sourceTree = "<group>"; };
 		7EEAD43818C6721300BF5C98 /* FindRoamersHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindRoamersHelper.m; path = Helpers/FindRoamersHelper.m; sourceTree = "<group>"; };
+		9A692FFC19DCFB2900FD2476 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Desktop/Roamer/Parse.framework; sourceTree = "<group>"; };
+		9AE6CDC619E392D70008EE8C /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../../Desktop/select.png; sourceTree = "<group>"; };
+		9AE6CDC819E392E50008EE8C /* new_message2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_message2.png; path = ../../../Desktop/new_message2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,9 +445,9 @@
 				7E93755418F714BB008806BF /* SystemConfiguration.framework in Frameworks */,
 				7E31D0B918BCCD36002BE0C9 /* MobileCoreServices.framework in Frameworks */,
 				7E636CA918B81D5500D5C6C5 /* CoreGraphics.framework in Frameworks */,
+				9A692FFD19DCFB2900FD2476 /* Parse.framework in Frameworks */,
 				7E636CAD18B81D5500D5C6C5 /* CoreData.framework in Frameworks */,
 				7E636CAB18B81D5500D5C6C5 /* UIKit.framework in Frameworks */,
-				7E93754418F7144A008806BF /* Parse.framework in Frameworks */,
 				7E636CA718B81D5500D5C6C5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +460,7 @@
 				7E636CC818B81D5500D5C6C5 /* CoreData.framework in Frameworks */,
 				7E636CC718B81D5500D5C6C5 /* UIKit.framework in Frameworks */,
 				7E636CC618B81D5500D5C6C5 /* Foundation.framework in Frameworks */,
+				9A692FFE19DCFB2900FD2476 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +492,7 @@
 		7E636C9A18B81D5500D5C6C5 = {
 			isa = PBXGroup;
 			children = (
+				9A692FFC19DCFB2900FD2476 /* Parse.framework */,
 				7E636CAE18B81D5500D5C6C5 /* Roamer */,
 				7E636CCB18B81D5500D5C6C5 /* RoamerTests */,
 				7E636CA518B81D5500D5C6C5 /* Frameworks */,
@@ -513,7 +520,6 @@
 				7E93754A18F714BB008806BF /* Security.framework */,
 				7E93754B18F714BB008806BF /* StoreKit.framework */,
 				7E93754C18F714BB008806BF /* SystemConfiguration.framework */,
-				7E93754318F7144A008806BF /* Parse.framework */,
 				7E31D0B818BCCD36002BE0C9 /* MobileCoreServices.framework */,
 				7E636CA618B81D5500D5C6C5 /* Foundation.framework */,
 				7E636CA818B81D5500D5C6C5 /* CoreGraphics.framework */,
@@ -612,6 +618,7 @@
 				7E636D2E18B820BD00D5C6C5 /* check_box.png */,
 				7E636D3018B820BD00D5C6C5 /* cloud_plus_lands.png */,
 				7E006B9418BCF8E0001028BE /* chicago_cartoon.png */,
+				9AE6CDC619E392D70008EE8C /* select.png */,
 				7E636D3118B820BD00D5C6C5 /* create_account.png */,
 				7E636D3218B820BD00D5C6C5 /* createaccount_bottom_image.jpg */,
 				7E636D3318B820BD00D5C6C5 /* default_userpic.png */,
@@ -648,6 +655,7 @@
 				7E636D4B18B820BD00D5C6C5 /* logo_no_text.png */,
 				7E636D4C18B820BD00D5C6C5 /* logo_with_text.png */,
 				7E636D4D18B820BD00D5C6C5 /* luggage_tag_blank.png */,
+				9AE6CDC819E392E50008EE8C /* new_message2.png */,
 				7E006BA018BCFCC7001028BE /* luggage_tag_tan.png */,
 				7E636D5018B820BD00D5C6C5 /* my_events_dark.png */,
 				7E636D5118B820BD00D5C6C5 /* my_events_light.png */,
@@ -843,7 +851,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					7E636CA218B81D5500D5C6C5 = {
-						DevelopmentTeam = 4RHDN54662;
+						DevelopmentTeam = N3R86J9KS8;
 					};
 					7E636CC218B81D5500D5C6C5 = {
 						TestTargetID = 7E636CA218B81D5500D5C6C5;
@@ -885,6 +893,7 @@
 				7E006BA118BCFCC7001028BE /* luggage_tag_tan.png in Resources */,
 				7E636D9318B820BD00D5C6C5 /* ic_back_button.png in Resources */,
 				7E636D8618B820BD00D5C6C5 /* exit_icon.png in Resources */,
+				9AE6CDC919E392E50008EE8C /* new_message2.png in Resources */,
 				7E6224BC18FD4DF8008DFC1D /* join.png in Resources */,
 				7E636D9A18B820BD00D5C6C5 /* logo_with_text.png in Resources */,
 				387D664619CD2EF800C6096C /* Pins.png in Resources */,
@@ -918,6 +927,7 @@
 				7E636D9B18B820BD00D5C6C5 /* luggage_tag_blank.png in Resources */,
 				7E4BAC3618E9893A00C2F5FF /* gothic.ttf in Resources */,
 				7E636DA418B820BD00D5C6C5 /* otuer_cloud_image.png in Resources */,
+				9AE6CDC719E392D70008EE8C /* select.png in Resources */,
 				7E006B8D18BCF6E0001028BE /* settings_gear.png in Resources */,
 				7E636D8318B820BD00D5C6C5 /* departures_landscape2.png in Resources */,
 				7E636D9E18B820BD00D5C6C5 /* my_events_dark.png in Resources */,
@@ -1106,7 +1116,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1124,8 +1135,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -1146,7 +1159,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1157,6 +1171,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1168,18 +1183,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Mehta (QSH89KBEC6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Mehta (QSH89KBEC6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/iOS\\ Project/My\\ Projects/Elance/Roamer/iOS/1.0/Roamer",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)/**",
+					/Users/macmini/Desktop/Roamer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roamer/Roamer-Prefix.pch";
 				INFOPLIST_FILE = "Roamer/Roamer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "27964e6a-f2d6-4e9e-8c5d-d1f7f590c434";
+				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1189,18 +1206,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Mehta (QSH89KBEC6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Mehta (QSH89KBEC6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/iOS\\ Project/My\\ Projects/Elance/Roamer/iOS/1.0/Roamer",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)/**",
+					/Users/macmini/Desktop/Roamer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roamer/Roamer-Prefix.pch";
 				INFOPLIST_FILE = "Roamer/Roamer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "27964e6a-f2d6-4e9e-8c5d-d1f7f590c434";
+				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1214,6 +1233,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/macmini/Desktop/Roamer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roamer/Roamer-Prefix.pch";
@@ -1237,6 +1257,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/macmini/Desktop/Roamer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roamer/Roamer-Prefix.pch";

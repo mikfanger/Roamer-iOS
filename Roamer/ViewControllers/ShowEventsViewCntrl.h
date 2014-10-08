@@ -36,6 +36,7 @@
 
 - (IBAction)onMyEventsAction:(id)sender;
 - (IBAction)onAllEventsAction:(id)sender;
+- (IBAction)onBackFromSortAction:(id)sender;
 - (IBAction)onBackAction:(id)sender;
 - (IBAction)onSortAction:(id)sender;
 

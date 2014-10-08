@@ -74,7 +74,7 @@
 }
 
 + (NSArray *) TravelStatusList {
-    return @[@{@"name": @"0-10% Travel Per Year",@"value":@"01"},@{@"name": @"10-30% Travel Per Year",@"value":@"02"},@{@"name": @"40-60% Travel Per Year",@"value":@"03"},@{@"name": @"60-80% Travel Per Year",@"value":@"04"},@{@"name": @"80-100% Travel Per Year",@"value":@"05"}];
+    return @[@{@"name": @"0-10% Explorer",@"value":@"01"},@{@"name": @"10-30% Excursionist",@"value":@"02"},@{@"name": @"40-60% Wanderer",@"value":@"03"},@{@"name": @"60-80% Nomad",@"value":@"04"},@{@"name": @"80-100% Globetrotter",@"value":@"05"}];
 }
 
 @end

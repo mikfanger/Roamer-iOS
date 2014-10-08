@@ -150,10 +150,10 @@
                 [prefs setObject:[helper getCurrentLocString:loc] forKey:PREF_CURRENT_LOC_STRING];
                 [prefs synchronize];
 
-                [self showAlertMessage:@"Confirmation!!!" message:@"Roamer created successfully."];
+                [self showAlertMessage:@"Nice!" message:@"Roamer created successfully, returing to Login Screen."];
             [self.delegate performFinishedAction:self];
         } else {
-            [self showAlertMessage:@"Error!!!" message:@"Error Creating User."];
+            [self showAlertMessage:@"Error!" message:@"Error Creating User."];
         }
     }];
 

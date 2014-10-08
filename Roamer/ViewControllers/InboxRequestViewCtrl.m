@@ -295,6 +295,11 @@
     return obj;
 }
 
+- (BOOL)tableView:(UITableView *) tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -309,6 +314,7 @@
 
     if(currentEventType == SHOW_INBOX) {
         ChatDB *chat = (ChatDB *)[self.fetchedResultsController objectAtIndexPath:currentIndex];
+        
         selectedUserName = chat.username;
         [self performSegueWithIdentifier:@"performChatDetail" sender:self];
     } else {
@@ -316,6 +322,14 @@
     }
 }
 
+//allow for delete of row and delete if it is selected
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        //ChatDB *chat = (ChatDB *)[self.fetchedResultsController objectAtIndexPath:currentIndex];
+        //[self.managedObjectContext deleteObject:chat];
+        //[tableView reloadData];
+    }
+}
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController *)fetchedResultsController
