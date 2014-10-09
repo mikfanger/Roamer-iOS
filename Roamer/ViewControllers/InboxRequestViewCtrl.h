@@ -25,6 +25,8 @@
 
 @property (nonatomic, weak) id <InboxRequestViewCtrlDelegate> delegate;
 
+@property (nonatomic, weak) NSManagedObjectID *documentId2;
+
 @property (strong, nonatomic) PFObject *userRoamer;
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
 @property (weak, nonatomic) IBOutlet UIView *mInboxView;

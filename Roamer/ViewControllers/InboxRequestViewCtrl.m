@@ -314,7 +314,7 @@
 
     if(currentEventType == SHOW_INBOX) {
         ChatDB *chat = (ChatDB *)[self.fetchedResultsController objectAtIndexPath:currentIndex];
-        
+
         selectedUserName = chat.username;
         [self performSegueWithIdentifier:@"performChatDetail" sender:self];
     } else {
@@ -324,11 +324,41 @@
 
 //allow for delete of row and delete if it is selected
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
     if (editingStyle == UITableViewCellEditingStyleDelete){
-        //ChatDB *chat = (ChatDB *)[self.fetchedResultsController objectAtIndexPath:currentIndex];
-        //[self.managedObjectContext deleteObject:chat];
-        //[tableView reloadData];
+        ChatDB *chat = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSString *stringName = chat.username;
+        
+        NSManagedObjectContext *moc = [self managedObjectContext];
+        NSEntityDescription *entityDescription = [NSEntityDescription
+                                                  entityForName:@"ChatDB" inManagedObjectContext:moc];
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        [request setEntity:entityDescription];
+        
+        // Set example predicate and sort orderings...
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                                  @"(username LIKE[c] %@)",stringName];
+        [request setPredicate:predicate];
+        NSError *error;
+        NSArray *array = [moc executeFetchRequest:request error:&error];
+        
+        if (array == nil)
+        {
+            // Deal with error...
+        }
+        else
+        {
+            for (ChatDB * chatty in array) {
+                [self.managedObjectContext deleteObject:chatty];
+            }
+        }
+        
+        //[[self managedObjectContext] deleteObject:chat];
+        //[[self managedObjectContext] save:nil];
+        [self fetchInboxData];
     }
+    
 }
 #pragma mark - Fetched results controller
 
