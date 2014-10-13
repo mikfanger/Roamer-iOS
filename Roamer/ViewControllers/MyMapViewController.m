@@ -181,11 +181,12 @@
         latitude = loc.latitude;
         longitude = loc.longitude;
     }
-
+    
+    googleType = [googleType stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
     // Build the url string to send to Google. NOTE: The kGOOGLE_API_KEY is a constant that should contain your own API key that you obtain from Google. See this link for more info:
     // https://developers.google.com/maps/documentation/places/#Authentication
-    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", latitude, longitude, [NSString stringWithFormat:@"%f", 300.0f], googleType, kGOOGLE_API_KEY];
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&name=%@&sensor=true&key=%@", latitude, longitude, [NSString stringWithFormat:@"%f", 2000.0f], googleType, kGOOGLE_API_KEY];
     
     //Formulate the string as a URL object.
     NSURL *googleRequestURL=[NSURL URLWithString:url];
@@ -289,7 +290,7 @@
 
     NSString* str = [NSString stringWithFormat:@"Are you sure you want:%@ : %@?",location.name, location.address];
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Confirmation!!!" message:str delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Confirm selection?" message:str delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     
     alertView.tag = 101;
     

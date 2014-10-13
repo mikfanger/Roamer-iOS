@@ -52,7 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    currentEventType = SHOW_MY_EVENTS;
+    currentEventType = SHOW_ALL_EVENTS;
     eventTypeArray = [DataSource EventPostingList];
     eventTimeArray = [DataSource EventTimeList];
 

@@ -10,6 +10,7 @@
 #import "FindRoamersHelper.h"
 #import "UserProfileHelper.h"
 #import "MyAppConstants.h"
+#import "ChatDB.h"
 
 static AppDelegate *sharedDelegate;
 
@@ -29,7 +30,9 @@ static AppDelegate *sharedDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [UserProfileHelper addChat:@"lou" message:@"Perfect!! I will be in town next week. Will be there for 2 weeks." type:NOT_MY_CHAT isViewed:MSG_IS_VIEWED dateReceived:[NSDate date]];
+    
+   
+    //    [UserProfileHelper addChat:@"lou" message:@"Perfect!! I will be in town next week. Will be there for 2 weeks." type:NOT_MY_CHAT isViewed:MSG_IS_VIEWED dateReceived:[NSDate date]];
 //    [UserProfileHelper addChat:@"mik100" message:@"Can you accept my invite!!" type:IT_IS_MY_CHAT isViewed:MSG_IS_VIEWED dateReceived:[NSDate date]];
 //    [UserProfileHelper addChat:@"ylee413" message:@"What movire!!" type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
     
@@ -66,6 +69,9 @@ static AppDelegate *sharedDelegate;
     // Override point for customization after application launch.
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    [self.window makeKeyAndVisible];
+    
+     NSLog(@"Hello Mike Infanger, app has started");
+    
     return YES;
 }
 
@@ -85,6 +91,13 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
 //        NSString *msgText = [userInfo objectForKey:@"alert"];
         NSString *fromUser = [userInfo objectForKey:@"from"];
         [self showNotification:msgText from:fromUser];
+        
+        //ChatDB* m = [[ChatDB alloc] init];
+        //m.username = fromUser;
+        //m.message = msgText;
+        //m.isViewed = 0;
+        
+        NSLog(@"Received notification: %@", fromUser);
     }
     //    [PFPush handlePush:userInfo];
 }

@@ -72,7 +72,6 @@
 		7E636D7318B820BD00D5C6C5 /* all_events.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2518B820BD00D5C6C5 /* all_events.png */; };
 		7E636D7418B820BD00D5C6C5 /* attending.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2618B820BD00D5C6C5 /* attending.png */; };
 		7E636D7518B820BD00D5C6C5 /* back_arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2718B820BD00D5C6C5 /* back_arrow1.png */; };
-		7E636D7718B820BD00D5C6C5 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2918B820BD00D5C6C5 /* back.png */; };
 		7E636D7818B820BD00D5C6C5 /* black_greyh_9_patch.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2A18B820BD00D5C6C5 /* black_greyh_9_patch.9.png */; };
 		7E636D7918B820BD00D5C6C5 /* blue_sky.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2B18B820BD00D5C6C5 /* blue_sky.png */; };
 		7E636D7A18B820BD00D5C6C5 /* bubble_green.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E636D2C18B820BD00D5C6C5 /* bubble_green.9.png */; };
@@ -185,6 +184,7 @@
 		7EEAD43918C6721300BF5C98 /* FindRoamersHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD43818C6721300BF5C98 /* FindRoamersHelper.m */; };
 		9A692FFD19DCFB2900FD2476 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A692FFC19DCFB2900FD2476 /* Parse.framework */; };
 		9A692FFE19DCFB2900FD2476 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A692FFC19DCFB2900FD2476 /* Parse.framework */; };
+		9A9690AE19E87FB900410F21 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A9690AD19E87FB900410F21 /* back.png */; };
 		9AE6CDC719E392D70008EE8C /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6CDC619E392D70008EE8C /* select.png */; };
 		9AE6CDC919E392E50008EE8C /* new_message2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6CDC819E392E50008EE8C /* new_message2.png */; };
 /* End PBXBuildFile section */
@@ -283,7 +283,6 @@
 		7E636D2518B820BD00D5C6C5 /* all_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_events.png; sourceTree = "<group>"; };
 		7E636D2618B820BD00D5C6C5 /* attending.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attending.png; sourceTree = "<group>"; };
 		7E636D2718B820BD00D5C6C5 /* back_arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_arrow1.png; sourceTree = "<group>"; };
-		7E636D2918B820BD00D5C6C5 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		7E636D2A18B820BD00D5C6C5 /* black_greyh_9_patch.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_greyh_9_patch.9.png; sourceTree = "<group>"; };
 		7E636D2B18B820BD00D5C6C5 /* blue_sky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_sky.png; sourceTree = "<group>"; };
 		7E636D2C18B820BD00D5C6C5 /* bubble_green.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble_green.9.png; sourceTree = "<group>"; };
@@ -426,6 +425,7 @@
 		7EEAD43718C6721300BF5C98 /* FindRoamersHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindRoamersHelper.h; path = Helpers/FindRoamersHelper.h; sourceTree = "<group>"; };
 		7EEAD43818C6721300BF5C98 /* FindRoamersHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindRoamersHelper.m; path = Helpers/FindRoamersHelper.m; sourceTree = "<group>"; };
 		9A692FFC19DCFB2900FD2476 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Desktop/Roamer/Parse.framework; sourceTree = "<group>"; };
+		9A9690AD19E87FB900410F21 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../Downloads/back.png; sourceTree = "<group>"; };
 		9AE6CDC619E392D70008EE8C /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../../Desktop/select.png; sourceTree = "<group>"; };
 		9AE6CDC819E392E50008EE8C /* new_message2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_message2.png; path = ../../../Desktop/new_message2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -608,9 +608,9 @@
 				7E636D2418B820BD00D5C6C5 /* all_events_light.png */,
 				7E636D2518B820BD00D5C6C5 /* all_events.png */,
 				7E636D2618B820BD00D5C6C5 /* attending.png */,
+				9A9690AD19E87FB900410F21 /* back.png */,
 				7E636D2718B820BD00D5C6C5 /* back_arrow1.png */,
 				7E006B9E18BCFC73001028BE /* back_arrow2.png */,
-				7E636D2918B820BD00D5C6C5 /* back.png */,
 				7E636D2A18B820BD00D5C6C5 /* black_greyh_9_patch.9.png */,
 				7E636D2B18B820BD00D5C6C5 /* blue_sky.png */,
 				7E636D2C18B820BD00D5C6C5 /* bubble_green.9.png */,
@@ -854,6 +854,7 @@
 						DevelopmentTeam = N3R86J9KS8;
 					};
 					7E636CC218B81D5500D5C6C5 = {
+						DevelopmentTeam = N3R86J9KS8;
 						TestTargetID = 7E636CA218B81D5500D5C6C5;
 					};
 				};
@@ -938,7 +939,6 @@
 				7E636DAF18B820BD00D5C6C5 /* roamer_logo.png in Resources */,
 				7E70CB9318CA971000796201 /* pic5.png in Resources */,
 				7E636DBA18B820BD00D5C6C5 /* terminal_landscape.png in Resources */,
-				7E636D7718B820BD00D5C6C5 /* back.png in Resources */,
 				7E636D8218B820BD00D5C6C5 /* departures_landscape.png in Resources */,
 				7E636D8C18B820BD00D5C6C5 /* go_next.png in Resources */,
 				7E70CB9118CA971000796201 /* pic3.png in Resources */,
@@ -981,6 +981,7 @@
 				7E636DB018B820BD00D5C6C5 /* roamer.png in Resources */,
 				7E636D8018B820BD00D5C6C5 /* createaccount_bottom_image.jpg in Resources */,
 				7EB4F7B118D4E72D0028D204 /* CurrentLocList.plist in Resources */,
+				9A9690AE19E87FB900410F21 /* back.png in Resources */,
 				7E636DA018B820BD00D5C6C5 /* my_events.png in Resources */,
 				7ED88269190AF4270059EA07 /* EventPostList.plist in Resources */,
 				7E636D7B18B820BD00D5C6C5 /* bubble_yellow.9.png in Resources */,
@@ -1229,6 +1230,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Roamer.app/Roamer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1243,6 +1246,7 @@
 				);
 				INFOPLIST_FILE = "RoamerTests/RoamerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1253,6 +1257,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Roamer.app/Roamer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1263,6 +1269,7 @@
 				GCC_PREFIX_HEADER = "Roamer/Roamer-Prefix.pch";
 				INFOPLIST_FILE = "RoamerTests/RoamerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
