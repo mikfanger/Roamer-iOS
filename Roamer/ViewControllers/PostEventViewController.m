@@ -120,12 +120,15 @@
 //        return;
 //    }
 
+    
     [[AppDelegate sharedDelegate] showFetchAlert];
     savedEventId = @"";
     EKEventStore *store = [[EKEventStore alloc] init];
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         [[AppDelegate sharedDelegate] dissmissFetchAlert];
         if (!granted) {
+            NSString *loginsaved = @"Your calendar did not grant you access!";
+            NSLog(@"%@", loginsaved );
         } else {
             EKEvent *event = [EKEvent eventWithEventStore:store];
             event.title = @"Roamer Event";
@@ -140,7 +143,6 @@
         }
         [self saveEventToParse];
     }];
-    
 }
 
 - (void) saveEventToParse {
@@ -166,13 +168,12 @@
         [[AppDelegate sharedDelegate] dissmissFetchAlert];
         if (!error) {
             [UserProfileHelper cacheAddEvent:savedEventId objectId:event.objectId ];
-            UIAlertView *anAlert=[[UIAlertView alloc] initWithTitle:@"Confirmation!!!" message:@"Event created successfully." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *anAlert=[[UIAlertView alloc] initWithTitle:@"All done!" message:@"Event created successfully." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [anAlert setTag:100];
             [anAlert show];
             
-//            [self showAlertMessage:@"Confirmation!!!" message:@"Event created successfully."];
         } else {
-            [self showAlertMessage:@"Error!!!" message:@"Error Creating User."];
+            [self showAlertMessage:@"Error!" message:@"Error Creating User."];
         }
     }];
 }

@@ -124,6 +124,15 @@
 
 - (void) sendNotification:(NSString *)message {
     NSInteger length = [message length];
+    
+    //save to Parse
+    PFObject *newChat = [PFObject objectWithClassName:@"Chat"];
+    newChat[@"message"] = message;
+    newChat[@"toName"] = self.userName;
+    newChat[@"fromName"] = self.userRoamer[@"Username"];
+    newChat[@"read"] = [NSNumber numberWithBool:(NO)];
+    [newChat saveInBackground];
+    
     if(length < 150){
         NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
                               message, @"alert",

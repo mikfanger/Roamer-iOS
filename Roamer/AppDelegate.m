@@ -31,6 +31,7 @@ static AppDelegate *sharedDelegate;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    
    
     //    [UserProfileHelper addChat:@"lou" message:@"Perfect!! I will be in town next week. Will be there for 2 weeks." type:NOT_MY_CHAT isViewed:MSG_IS_VIEWED dateReceived:[NSDate date]];
 //    [UserProfileHelper addChat:@"mik100" message:@"Can you accept my invite!!" type:IT_IS_MY_CHAT isViewed:MSG_IS_VIEWED dateReceived:[NSDate date]];
@@ -81,6 +82,7 @@ static AppDelegate *sharedDelegate;
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
     
     [currentInstallation saveInBackground];
+    
 }
 
 //- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -92,19 +94,47 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
         NSString *fromUser = [userInfo objectForKey:@"from"];
         [self showNotification:msgText from:fromUser];
         
-        //ChatDB* m = [[ChatDB alloc] init];
-        //m.username = fromUser;
-        //m.message = msgText;
-        //m.isViewed = 0;
-        
         NSLog(@"Received notification: %@", fromUser);
     }
     //    [PFPush handlePush:userInfo];
 }
 
 -(void) showNotification:(NSString*)msgText from:(NSString *)fromUser {
+    
+    
     [UserProfileHelper addChat:fromUser message:msgText type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
-   
+    
+    
+    //Load all chats that we did not previously have loaded
+    NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"Successfully retrieved userName: %@",[pref objectForKey:PREF_USERNAME]);
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
+    [query whereKey:@"toName" equalTo:[pref objectForKey:PREF_USERNAME]];
+    [query whereKey:@"read" equalTo:[NSNumber numberWithBool:(NO)]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu chats.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                /*
+                [UserProfileHelper addChat:object[@"fromName"] message:object[@"message"] type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
+                */
+                //Set the chat to READ
+                PFObject *newChat = object;
+                
+                [newChat deleteInBackground];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:fromUser forKey:@"from"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kRefreshRequested object:nil userInfo:userInfo];
@@ -135,6 +165,36 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
         currentInstallation.badge = 0;
         [currentInstallation save];
     }
+    
+    //Load all chats that we did not previously have loaded
+    NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"Successfully retrieved userName: %@",[pref objectForKey:PREF_USERNAME]);
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
+    [query whereKey:@"toName" equalTo:[pref objectForKey:PREF_USERNAME]];
+    [query whereKey:@"read" equalTo:[NSNumber numberWithBool:(NO)]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu chats.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                
+                [UserProfileHelper addChat:object[@"fromName"] message:object[@"message"] type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
+                
+                //Set the chat to READ
+                PFObject *newChat = object;
+                
+                [newChat deleteInBackground];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

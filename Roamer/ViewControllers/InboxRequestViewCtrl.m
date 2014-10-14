@@ -13,6 +13,7 @@
 #import "RoamerProfileViewCtrl.h"
 #import "AppDelegate.h"
 #import "ChatDB.h"
+#import "UserProfileHelper.h"
 
 @interface InboxRequestViewCtrl () {
     NSMutableArray *inboxListArray;
@@ -56,6 +57,7 @@
     viewSelectRect = self.mSelectRoamerView.frame;
     viewSelectRectHidden = CGRectMake(0, viewSelectRect.origin.y + viewSelectRect.size.height + 30, viewSelectRect.size.width, viewSelectRect.size.height);
     self.mSelectRoamerView.frame = viewSelectRectHidden;
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {

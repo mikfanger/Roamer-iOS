@@ -30,6 +30,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -49,7 +50,8 @@
     locSelectRect = self.mLocTableView.frame;
     locSelectRectHidden = CGRectMake(0, locSelectRect.origin.y + locSelectRect.size.height + 30, locSelectRect.size.width, locSelectRect.size.height);
     self.mLocTableView.frame = locSelectRectHidden;
-}
+    
+    }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
