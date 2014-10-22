@@ -16,7 +16,6 @@
 		38133E3C195C3BB6001DFF5C /* RequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38133E3B195C3BB6001DFF5C /* RequestTableViewCell.m */; };
 		38133E3F195C449B001DFF5C /* InboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38133E3E195C449B001DFF5C /* InboxTableViewCell.m */; };
 		38133E42195C9FB8001DFF5C /* ChatDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 38133E41195C9FB8001DFF5C /* ChatDB.m */; };
-		3877843D19A68B6E00A9C20C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93754B18F714BB008806BF /* StoreKit.framework */; };
 		387D664119CD2DAA00C6096C /* DDAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 387D664019CD2DAA00C6096C /* DDAnnotation.m */; };
 		387D664419CD2E5900C6096C /* DDAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 387D664319CD2E5900C6096C /* DDAnnotationView.m */; };
 		387D664619CD2EF800C6096C /* Pins.png in Resources */ = {isa = PBXBuildFile; fileRef = 387D664519CD2EF800C6096C /* Pins.png */; };
@@ -182,9 +181,13 @@
 		7EEAD3CA18C622CC00BF5C98 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD3C918C622CC00BF5C98 /* HomeViewController.m */; };
 		7EEAD43618C6704000BF5C98 /* FindRoamersViewCntrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD43518C6704000BF5C98 /* FindRoamersViewCntrl.m */; };
 		7EEAD43918C6721300BF5C98 /* FindRoamersHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAD43818C6721300BF5C98 /* FindRoamersHelper.m */; };
+		9A42D9E219F79229000ECE90 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A42D9E119F79229000ECE90 /* GameKit.framework */; };
+		9A42D9E419F7922D000ECE90 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A42D9E319F7922D000ECE90 /* StoreKit.framework */; };
 		9A692FFD19DCFB2900FD2476 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A692FFC19DCFB2900FD2476 /* Parse.framework */; };
 		9A692FFE19DCFB2900FD2476 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A692FFC19DCFB2900FD2476 /* Parse.framework */; };
 		9A9690AE19E87FB900410F21 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A9690AD19E87FB900410F21 /* back.png */; };
+		9A9690B019ECBE7900410F21 /* message_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A9690AF19ECBE7900410F21 /* message_mail.png */; };
+		9A9690B219ECBE8800410F21 /* new_message2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A9690B119ECBE8800410F21 /* new_message2.png */; };
 		9AE6CDC719E392D70008EE8C /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6CDC619E392D70008EE8C /* select.png */; };
 		9AE6CDC919E392E50008EE8C /* new_message2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6CDC819E392E50008EE8C /* new_message2.png */; };
 /* End PBXBuildFile section */
@@ -374,7 +377,6 @@
 		7E93754818F714BB008806BF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7E93754918F714BB008806BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E93754A18F714BB008806BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		7E93754B18F714BB008806BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7E93754C18F714BB008806BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7E9BC6801941EE0E009681C6 /* PostEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostEventViewController.h; path = ViewControllers/PostEventViewController.h; sourceTree = "<group>"; };
 		7E9BC6811941EE0E009681C6 /* PostEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostEventViewController.m; path = ViewControllers/PostEventViewController.m; sourceTree = "<group>"; };
@@ -424,8 +426,12 @@
 		7EEAD43518C6704000BF5C98 /* FindRoamersViewCntrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindRoamersViewCntrl.m; path = ViewControllers/FindRoamersViewCntrl.m; sourceTree = "<group>"; };
 		7EEAD43718C6721300BF5C98 /* FindRoamersHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindRoamersHelper.h; path = Helpers/FindRoamersHelper.h; sourceTree = "<group>"; };
 		7EEAD43818C6721300BF5C98 /* FindRoamersHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindRoamersHelper.m; path = Helpers/FindRoamersHelper.m; sourceTree = "<group>"; };
+		9A42D9E119F79229000ECE90 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9A42D9E319F7922D000ECE90 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9A692FFC19DCFB2900FD2476 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Desktop/Roamer/Parse.framework; sourceTree = "<group>"; };
 		9A9690AD19E87FB900410F21 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../Downloads/back.png; sourceTree = "<group>"; };
+		9A9690AF19ECBE7900410F21 /* message_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = message_mail.png; path = ../../../Desktop/message_mail.png; sourceTree = "<group>"; };
+		9A9690B119ECBE8800410F21 /* new_message2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_message2.png; path = ../../../Desktop/new_message2.png; sourceTree = "<group>"; };
 		9AE6CDC619E392D70008EE8C /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../../Desktop/select.png; sourceTree = "<group>"; };
 		9AE6CDC819E392E50008EE8C /* new_message2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_message2.png; path = ../../../Desktop/new_message2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -435,7 +441,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3877843D19A68B6E00A9C20C /* StoreKit.framework in Frameworks */,
 				7E93754D18F714BB008806BF /* AudioToolbox.framework in Frameworks */,
 				7E93754E18F714BB008806BF /* CFNetwork.framework in Frameworks */,
 				7E93754F18F714BB008806BF /* CoreLocation.framework in Frameworks */,
@@ -445,8 +450,10 @@
 				7E93755418F714BB008806BF /* SystemConfiguration.framework in Frameworks */,
 				7E31D0B918BCCD36002BE0C9 /* MobileCoreServices.framework in Frameworks */,
 				7E636CA918B81D5500D5C6C5 /* CoreGraphics.framework in Frameworks */,
+				9A42D9E219F79229000ECE90 /* GameKit.framework in Frameworks */,
 				9A692FFD19DCFB2900FD2476 /* Parse.framework in Frameworks */,
 				7E636CAD18B81D5500D5C6C5 /* CoreData.framework in Frameworks */,
+				9A42D9E419F7922D000ECE90 /* StoreKit.framework in Frameworks */,
 				7E636CAB18B81D5500D5C6C5 /* UIKit.framework in Frameworks */,
 				7E636CA718B81D5500D5C6C5 /* Foundation.framework in Frameworks */,
 			);
@@ -512,13 +519,14 @@
 		7E636CA518B81D5500D5C6C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A42D9E319F7922D000ECE90 /* StoreKit.framework */,
+				9A42D9E119F79229000ECE90 /* GameKit.framework */,
 				7E93754518F714BB008806BF /* AudioToolbox.framework */,
 				7E93754618F714BB008806BF /* CFNetwork.framework */,
 				7E93754718F714BB008806BF /* CoreLocation.framework */,
 				7E93754818F714BB008806BF /* libz.dylib */,
 				7E93754918F714BB008806BF /* QuartzCore.framework */,
 				7E93754A18F714BB008806BF /* Security.framework */,
-				7E93754B18F714BB008806BF /* StoreKit.framework */,
 				7E93754C18F714BB008806BF /* SystemConfiguration.framework */,
 				7E31D0B818BCCD36002BE0C9 /* MobileCoreServices.framework */,
 				7E636CA618B81D5500D5C6C5 /* Foundation.framework */,
@@ -657,7 +665,9 @@
 				7E636D4D18B820BD00D5C6C5 /* luggage_tag_blank.png */,
 				9AE6CDC819E392E50008EE8C /* new_message2.png */,
 				7E006BA018BCFCC7001028BE /* luggage_tag_tan.png */,
+				9A9690AF19ECBE7900410F21 /* message_mail.png */,
 				7E636D5018B820BD00D5C6C5 /* my_events_dark.png */,
+				9A9690B119ECBE8800410F21 /* new_message2.png */,
 				7E636D5118B820BD00D5C6C5 /* my_events_light.png */,
 				7E006B9818BCF9DE001028BE /* message_background.png */,
 				7E636D5218B820BD00D5C6C5 /* my_events.png */,
@@ -851,7 +861,15 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					7E636CA218B81D5500D5C6C5 = {
-						DevelopmentTeam = N3R86J9KS8;
+						DevelopmentTeam = 2C96K2VVR9;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					7E636CC218B81D5500D5C6C5 = {
 						DevelopmentTeam = N3R86J9KS8;
@@ -897,6 +915,7 @@
 				9AE6CDC919E392E50008EE8C /* new_message2.png in Resources */,
 				7E6224BC18FD4DF8008DFC1D /* join.png in Resources */,
 				7E636D9A18B820BD00D5C6C5 /* logo_with_text.png in Resources */,
+				9A9690B219ECBE8800410F21 /* new_message2.png in Resources */,
 				387D664619CD2EF800C6096C /* Pins.png in Resources */,
 				7E636D7218B820BD00D5C6C5 /* all_events_light.png in Resources */,
 				7E636D7118B820BD00D5C6C5 /* all_events_dark.png in Resources */,
@@ -990,6 +1009,7 @@
 				7E636D9118B820BD00D5C6C5 /* honeycomb_sms.png in Resources */,
 				7E006B9118BCF7D9001028BE /* no_photo.png in Resources */,
 				7E636DBD18B820BD00D5C6C5 /* x.png in Resources */,
+				9A9690B019ECBE7900410F21 /* message_mail.png in Resources */,
 				7EB99CA51950693B0061B24A /* search.png in Resources */,
 				7E636D9418B820BD00D5C6C5 /* ic_launcher.png in Resources */,
 				7E006B9F18BCFC73001028BE /* back_arrow2.png in Resources */,
@@ -1117,8 +1137,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Louis Panagopoulos (2C96K2VVR9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Louis Panagopoulos (2C96K2VVR9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1136,7 +1156,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
+				PROVISIONING_PROFILE = "c2638476-5143-4800-ae28-2d10917d63aa";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1160,8 +1180,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Louis Panagopoulos (2C96K2VVR9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Louis Panagopoulos (2C96K2VVR9)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1172,7 +1192,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
+				PROVISIONING_PROFILE = "c2638476-5143-4800-ae28-2d10917d63aa";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1184,8 +1204,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1197,7 +1217,7 @@
 				INFOPLIST_FILE = "Roamer/Roamer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1207,8 +1227,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: michael infanger (4X94D7EYS2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: michael infanger (4X94D7EYS2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -1220,7 +1240,7 @@
 				INFOPLIST_FILE = "Roamer/Roamer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "44262c50-9a66-4fad-a0ab-0fea4572191f";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -51,6 +51,35 @@
     locSelectRectHidden = CGRectMake(0, locSelectRect.origin.y + locSelectRect.size.height + 30, locSelectRect.size.width, locSelectRect.size.height);
     self.mLocTableView.frame = locSelectRectHidden;
     
+    //Load all chats that we did not previously have loaded
+    NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"Successfully retrieved userName: %@",[pref objectForKey:PREF_USERNAME]);
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
+    [query whereKey:@"toName" equalTo:[pref objectForKey:PREF_USERNAME]];
+    [query whereKey:@"read" equalTo:[NSNumber numberWithBool:(NO)]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu chats.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                
+                [UserProfileHelper addChat:object[@"fromName"] message:object[@"message"] type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
+                
+                //Set the chat to READ
+                PFObject *newChat = object;
+                
+                [newChat deleteInBackground];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
     }
 
 - (void) viewWillAppear:(BOOL)animated {

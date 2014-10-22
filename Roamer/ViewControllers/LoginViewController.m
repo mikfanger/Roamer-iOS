@@ -130,6 +130,8 @@ CGFloat animatedDistance;
                 block:^(PFUser *user, NSError *error) {
                     [[AppDelegate sharedDelegate] dissmissFetchAlert];
                     if (user) {
+                        
+                        //Boolean* emailVerified = *user.
                         UserProfileHelper* helper = [UserProfileHelper sharedUserProfileHelper];
                         PFObject* object = [helper checkIfUserExist:[self.mEmailTextField.text lowercaseString] password:self.mPasswordTextField.text];
                         if(object != nil) {

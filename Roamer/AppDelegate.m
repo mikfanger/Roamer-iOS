@@ -171,29 +171,31 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
     
     NSLog(@"Successfully retrieved userName: %@",[pref objectForKey:PREF_USERNAME]);
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
-    [query whereKey:@"toName" equalTo:[pref objectForKey:PREF_USERNAME]];
-    [query whereKey:@"read" equalTo:[NSNumber numberWithBool:(NO)]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu chats.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-                
-                [UserProfileHelper addChat:object[@"fromName"] message:object[@"message"] type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
-                
-                //Set the chat to READ
-                PFObject *newChat = object;
-                
-                [newChat deleteInBackground];
+    if ([[pref objectForKey:PREF_USERNAME]length] > 0){
+        PFQuery *query = [PFQuery queryWithClassName:@"Chat"];
+        [query whereKey:@"toName" equalTo:[pref objectForKey:PREF_USERNAME]];
+        [query whereKey:@"read" equalTo:[NSNumber numberWithBool:(NO)]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %lu chats.", (unsigned long)objects.count);
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    NSLog(@"%@", object.objectId);
+                    
+                    [UserProfileHelper addChat:object[@"fromName"] message:object[@"message"] type:NOT_MY_CHAT isViewed:MSG_IS_NOT_VIEWED dateReceived:[NSDate date]];
+                    
+                    //Set the chat to READ
+                    PFObject *newChat = object;
+                    
+                    [newChat deleteInBackground];
+                }
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+        }];
+    }
     
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
