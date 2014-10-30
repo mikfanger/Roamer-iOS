@@ -24,13 +24,23 @@
     return [[NSArray alloc] initWithContentsOfFile:path];
 }
 
++ (NSArray *) JobList {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"JobList" ofType:@"plist"];
+    return [[NSArray alloc] initWithContentsOfFile:path];
+}
 + (NSArray *) ProfileLocList {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"ProfileLocList" ofType:@"plist"];
     return [[NSArray alloc] initWithContentsOfFile:path];
 }
 
 + (NSArray *) CurrentLocList {
-    NSMutableArray* arrayList = [[NSMutableArray alloc] init];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CurrentLocList" ofType:@"plist"];
+    return [[NSArray alloc] initWithContentsOfFile:path];
+    
+    //NSMutableArray* arrayList = [[NSMutableArray alloc] init];
+    
+/*
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     dic[@"name"] = @"Not Selected";
     dic[@"value"] = [NSString stringWithFormat:@"%d",0];
@@ -52,10 +62,17 @@
             [arrayList addObject:dic];
         }
     }
-
+*/
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"CurrentLocList" ofType:@"plist"];
 //    return [[NSArray alloc] initWithContentsOfFile:path];
-    return arrayList;
+    
+    //NSSortDescriptor *sortDescriptor;
+    //sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"value" ascending:YES];
+    //NSMutableArray *sortDescriptors = [NSMutableArray arrayWithObject:sortDescriptor];
+    //NSArray *sortedArray;
+    //sortedArray = [arrayList sortedArrayUsingDescriptors:sortDescriptors];
+    
+    //return arrayList;
 }
 
 + (NSArray *) EventPostingList {

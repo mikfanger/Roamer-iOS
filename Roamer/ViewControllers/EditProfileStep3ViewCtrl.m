@@ -97,6 +97,7 @@
     NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
     
     self.userRoamer[@"Air"] = [pref objectForKey:PREF_AIRLINE];
+    self.userRoamer[@"Job"] = [pref objectForKey:PREF_JOB];
     self.userRoamer[@"Airline"] = [pref objectForKey:PREF_AIRLINE];
     self.userRoamer[@"Email"] = [pref objectForKey:PREF_EMAIL];
     self.userRoamer[@"Hotel"] = [pref objectForKey:PREF_HOTEL];
@@ -123,10 +124,10 @@
     [self.userRoamer saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [[AppDelegate sharedDelegate] dissmissFetchAlert];
         if (!error) {
-            [self showAlertMessage:@"Confirmation!!!" message:@"Roamer saved successfully."];
+            [self showAlertMessage:@"Confirmed!" message:@"Roamer changes saved successfully."];
             [self.delegate returnFromEditProfileStep3:self];
         } else {
-            [self showAlertMessage:@"Error!!!" message:@"Error Creating User."];
+            [self showAlertMessage:@"Error!" message:@"Error saving changed data."];
         }
     }];
     

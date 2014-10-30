@@ -13,14 +13,17 @@
 
 #define INDUSTRY_SELECT                 1
 #define LOCAL_SELECT                    2
+#define JOB_SELECT                      3
 
 @interface CreateAccount2ViewCtrl () {
     NSArray *industryArray;
+    NSArray *jobArray;
     NSArray *locationArray;
     CGRect  locSelectRect;
     CGRect  locSelectRectHidden;
     int industryInt;
     int locationInt;
+    int jobInt;
     int currentButton;
     UIImage* profileImage;
     BOOL fromImagePicker;
@@ -45,14 +48,15 @@
     
     fromImagePicker = FALSE;
     
-//    locationArray = @[@"Midwest",@"West",@"Southwest",@"Southeast",@"Northeast"];
     locationArray = [DataSource ProfileLocList];
-//    self.mLocationLabel.text = locationArray[0][@"name"];
     self.mLocationLabel.text = @"";
     
     industryArray = [DataSource IndustryList];
     self.mIndustryLabel.text = @"";
-
+    
+    jobArray = [DataSource JobList];
+    self.mJobLabel.text = @"";
+    
     locSelectRect = self.mLocTableView.frame;
     locSelectRectHidden = CGRectMake(0, locSelectRect.origin.y + locSelectRect.size.height + 30, locSelectRect.size.width, locSelectRect.size.height);
     self.mLocTableView.frame = locSelectRectHidden;
@@ -70,6 +74,8 @@
             self.mLocationLabel.text = [self getStringFromInt:locationInt arrayList:locationArray];
             industryInt = [[prefs objectForKey:PREF_INDUSTRY] intValue];
             self.mIndustryLabel.text = [self getStringFromInt:industryInt arrayList:industryArray];
+            jobInt = [[prefs objectForKey:PREF_JOB] intValue];
+            self.mJobLabel.text = [self getStringFromInt:jobInt arrayList:jobArray];
             profileImage = [self readImageFromPref];
             self.mProfileImgView.image = profileImage;
         }
@@ -85,22 +91,29 @@
 - (IBAction)onNextAction:(id)sender {
     NSString* industry = self.mIndustryLabel.text;
     NSString* location = self.mLocationLabel.text;
-
+    NSString* job = self.mJobLabel.text;
+    
     if ([industry isEqualToString:@""]) {
-        [self showAlertMessage:@"Error!!!" message:@"Industry is required field!"];
+        [self showAlertMessage:@"Error!" message:@"Industry is required field!"];
         return;
     }
 
     if ([location isEqualToString:@""]) {
-        [self showAlertMessage:@"Error!!!" message:@"Home Region is required field!"];
+        [self showAlertMessage:@"Error!" message:@"Home Region is required field!"];
         return;
     }
+    if ([job isEqualToString:@""]) {
+        [self showAlertMessage:@"Error!" message:@"Job is required field!"];
+        return;
+    }
+    
 
 
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     [prefs setObject:[NSNumber numberWithInt:locationInt] forKey:PREF_REGION];
     [prefs setObject:[NSNumber numberWithInt:industryInt] forKey:PREF_INDUSTRY];
+    [prefs setObject:[NSNumber numberWithInt:jobInt] forKey:PREF_JOB];
     [prefs synchronize];
 
     [self performSegueWithIdentifier:@"performCreatAcct3" sender:self];
@@ -118,6 +131,12 @@
 
 - (IBAction)onIndustrySelectAction:(id)sender {
     currentButton = INDUSTRY_SELECT;
+    [self.mTableView reloadData];
+    [self slideInLocViewAnimation];
+}
+
+- (IBAction)onJobSelectAction:(id)sender {
+    currentButton = JOB_SELECT;
     [self.mTableView reloadData];
     [self slideInLocViewAnimation];
 }
@@ -210,8 +229,11 @@
     if(currentButton == INDUSTRY_SELECT){
         self.mViewTitleLabel.text = @"Select Industry";
     } else if(currentButton == LOCAL_SELECT){
-            self.mViewTitleLabel.text = @"Select Location";
+            self.mViewTitleLabel.text = @"Select Region";
+    } else if(currentButton == JOB_SELECT){
+        self.mViewTitleLabel.text = @"Select Position";
     }
+    
     self.mLocTableView.frame = locSelectRectHidden;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.6f];
@@ -261,7 +283,10 @@
         return [industryArray count];
     } else if(currentButton == LOCAL_SELECT) {
         return [locationArray count];
+    } else if(currentButton == JOB_SELECT) {
+        return [jobArray count];
     }
+    
     return [industryArray count];
 }
 
@@ -274,6 +299,8 @@
         cell.textLabel.text = industryArray[indexPath.row][@"name"];
     } else if(currentButton == LOCAL_SELECT) {
         cell.textLabel.text = locationArray[indexPath.row][@"name"];
+    } else if(currentButton == JOB_SELECT) {
+        cell.textLabel.text = jobArray[indexPath.row][@"name"];
     }
     
     return cell;
@@ -286,8 +313,12 @@
         industryInt = [industryArray[indexPath.row][@"value"] intValue];
     } else if(currentButton == LOCAL_SELECT) {
         self.mLocationLabel.text = locationArray[indexPath.row][@"name"];
-        locationInt = [industryArray[indexPath.row][@"value"] intValue];
+        locationInt = [locationArray[indexPath.row][@"value"] intValue];
+    } else if(currentButton == JOB_SELECT) {
+        self.mJobLabel.text = jobArray[indexPath.row][@"name"];
+        jobInt = [jobArray[indexPath.row][@"value"] intValue];
     }
+    
     [self slideOutLocViewAnimation];
 }
 

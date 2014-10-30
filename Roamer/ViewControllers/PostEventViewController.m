@@ -48,6 +48,26 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
+    PFQuery *query = [PFQuery queryWithClassName:@"Cities"];
+    [query whereKey:@"Name" equalTo:[pref stringForKey:PREF_CURRENT_LOC_STRING]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error){
+            
+            PFObject *object  = (PFObject*)objects[0];
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            
+            PFGeoPoint *geoPoint = object[@"LatLong"];
+            [prefs setDouble:geoPoint.latitude forKey:PREF_CURRENT_LOC_GEO_LAT];
+            [prefs setDouble:geoPoint.longitude forKey:PREF_CURRENT_LOC_GEO_LONG];
+            [prefs synchronize];
+        }
+        else{
+            
+        }
+    }];
+    
+    
     typeArray = [[NSMutableArray alloc] init];
     timeArray = [[NSMutableArray alloc] init];
 
@@ -111,14 +131,14 @@
 
 - (IBAction)onPostAction:(id)sender {
     if ([self.mAddressLabel.text isEqualToString:@""]) {
-        [self showAlertMessage:@"Error!!!" message:@"Please select address."];
+        [self showAlertMessage:@"Error!" message:@"Please select address."];
         return;
     }
     
-//    if ([self.mCommentText.text isEqualToString:@""]) {
-//        [self showAlertMessage:@"Error!!!" message:@"Please enter comment."];
-//        return;
-//    }
+    if ([self.mCommentText.text isEqualToString:@""]) {
+        [self showAlertMessage:@"Error!" message:@"Please enter comment."];
+        return;
+    }
 
     
     [[AppDelegate sharedDelegate] showFetchAlert];

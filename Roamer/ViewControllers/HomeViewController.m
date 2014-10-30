@@ -140,7 +140,7 @@
     NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
     int locInt = (int)[pref integerForKey:PREF_CURRENT_LOC_INT];
     if(locInt == 0){
-        [self showAlertMessage:@"Error!!!" message:@"Please select your current location."];
+        [self showAlertMessage:@"Error!" message:@"Please select your current location."];
     } else {
         [self performSegueWithIdentifier:@"performPostEvent" sender:self];
     }
@@ -243,11 +243,13 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
+    NSLog(@"Name of city is %@", str);
+    
     [prefs setObject:str forKey:PREF_CURRENT_LOC_STRING];
-    [prefs setInteger:locationInt forKey:PREF_CURRENT_LOC_INT];
-    PFGeoPoint* geoPoint = locationArray[indexPath.row][@"latlong"];
-    [prefs setDouble:geoPoint.latitude forKey:PREF_CURRENT_LOC_GEO_LAT];
-    [prefs setDouble:geoPoint.longitude forKey:PREF_CURRENT_LOC_GEO_LONG];
+    //[prefs setInteger:locationInt forKey:PREF_CURRENT_LOC_INT];
+    //PFGeoPoint* geoPoint = locationArray[indexPath.row][@"latlong"];
+    //[prefs setDouble:geoPoint.latitude forKey:PREF_CURRENT_LOC_GEO_LAT];
+    //[prefs setDouble:geoPoint.longitude forKey:PREF_CURRENT_LOC_GEO_LONG];
     [prefs synchronize];
 
     NSString* objId =  [prefs objectForKey:PREF_USER_OBJECT_ID];

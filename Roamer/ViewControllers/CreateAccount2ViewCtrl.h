@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *mLocationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mProfileImgView;
 @property (weak, nonatomic) IBOutlet UILabel *mIndustryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mJobLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *mLocTableView;
 @property (weak, nonatomic) IBOutlet UILabel *mViewTitleLabel;
@@ -32,5 +33,6 @@
 - (IBAction)onPrevAction:(id)sender;
 - (IBAction)onSelectImgAction:(id)sender;
 - (IBAction)onIndustrySelectAction:(id)sender;
+- (IBAction)onJobSelectAction:(id)sender;
 
 @end

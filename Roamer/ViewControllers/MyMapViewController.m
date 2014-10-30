@@ -46,6 +46,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     placesArray = [[NSMutableArray alloc] init];
     placesArray = [DataSource PlacesList];
 
@@ -82,7 +83,7 @@
     [prefs synchronize];
 
     NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
-//    NSString* loc = [pref objectForKey:PREF_CURRENT_LOC_STRING];
+
     double latitude = [pref doubleForKey:PREF_CURRENT_LOC_GEO_LAT];
     double longitude = [pref doubleForKey:PREF_CURRENT_LOC_GEO_LONG];
 
@@ -103,7 +104,7 @@
     NSArray * annotations = [self.mMapView annotations];
     [self.mMapView removeAnnotations:annotations];
 
-            MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2 * METERS_PER_MILE, 2 *METERS_PER_MILE);
+            MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 3 * METERS_PER_MILE, 3 *METERS_PER_MILE);
             [self.mMapView setRegion:viewRegion animated:YES];
     [self.mMapView addAnnotation:annotation];
 //        }
@@ -170,6 +171,8 @@
 }
 
 -(void) queryGooglePlaces: (NSString *) googleType {
+    
+    
     NSUserDefaults* pref = [NSUserDefaults standardUserDefaults];
     //    NSString* loc = [pref objectForKey:PREF_CURRENT_LOC_STRING];
     double latitude = [pref doubleForKey:PREF_CURRENT_LOC_GEO_LAT];

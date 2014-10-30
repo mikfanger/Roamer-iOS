@@ -47,11 +47,6 @@
 {
     [super viewDidLoad];
 
-//    industryArray = @[@"Medical",@"Finance",@"Software",@"Manufacturing",@"Biotech"];
-//    jobArray = @[@"Accounting",@"Marketing",@"Consultant",@"Sales",@"Garbage Man"];
-//    airlineArray = @[@"Jet Blue",@"Southwest",@"Delta",@"United",@"American"];
-//    hotelArray = @[@"Hilton",@"Starwood",@"Marriott",@"Doubletree",@"Embassy"];
-//    travelArray = @[@{@"name": @"0-10% Travel Per Year",@"value":@"01"},@{@"name": @"10-30% Travel Per Year",@"value":@"02"},@{@"name": @"40-60% Travel Per Year",@"value":@"03"},@{@"name": @"60-80% Travel Per Year",@"value":@"04"},@{@"name": @"80-100% Travel Per Year",@"value":@"05"}];
     travelArray = [DataSource TravelStatusList];
     airlineArray = [DataSource AirlineList];
     hotelArray = [DataSource HotelList];
@@ -111,8 +106,9 @@
     roamers[@"Email"] = [[pref objectForKey:PREF_EMAIL] lowercaseString];
     roamers[@"Hotel"] = [pref objectForKey:PREF_HOTEL];
     roamers[@"Industry"] = [pref objectForKey:PREF_INDUSTRY];
+    roamers[@"Job"] = [pref objectForKey:PREF_JOB];
     roamers[@"LoginCount"] = [NSNumber numberWithInt:0];
-    //    roamers[@"Job"] = [pref objectForKey:PREF_JOB];
+    roamers[@"EmailVerified"] = [NSNumber numberWithInt:0];    
     roamers[@"Location"] = [pref objectForKey:PREF_REGION];
     if(gender == 0)
         roamers[@"Male"] = [NSNumber numberWithBool:true];
@@ -150,7 +146,7 @@
                 [prefs setObject:[helper getCurrentLocString:loc] forKey:PREF_CURRENT_LOC_STRING];
                 [prefs synchronize];
 
-                [self showAlertMessage:@"Nice!" message:@"Roamer created successfully, returing to Login Screen."];
+                [self showAlertMessage:@"Nice!" message:@"Roamer created successfully, returing to Login Screen.  A verification email has been sent, click the enclosed link to finsih the signup process."];
             [self.delegate performFinishedAction:self];
         } else {
             [self showAlertMessage:@"Error!" message:@"Error Creating User."];

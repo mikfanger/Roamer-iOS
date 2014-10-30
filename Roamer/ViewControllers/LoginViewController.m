@@ -107,12 +107,12 @@ CGFloat animatedDistance;
 
 - (IBAction)onLoginAction:(id)sender {
     if ([self.mEmailTextField.text isEqualToString:@""]) {
-        [self showAlertMessage:@"Error!!!" message:@"Enter a valid email address"];
+        [self showAlertMessage:@"Error!" message:@"Enter a valid email address"];
         return;
     }
     
     if ([self.mPasswordTextField.text isEqualToString:@""]) {
-        [self showAlertMessage:@"Error!!!" message:@"Password does not match!"];
+        [self showAlertMessage:@"Error!" message:@"Password does not match!"];
         return;
     }
     
@@ -131,20 +131,28 @@ CGFloat animatedDistance;
                     [[AppDelegate sharedDelegate] dissmissFetchAlert];
                     if (user) {
                         
-                        //Boolean* emailVerified = *user.
-                        UserProfileHelper* helper = [UserProfileHelper sharedUserProfileHelper];
-                        PFObject* object = [helper checkIfUserExist:[self.mEmailTextField.text lowercaseString] password:self.mPasswordTextField.text];
-                        if(object != nil) {
-                            [object incrementKey:@"LoginCount"];
-                            [object saveEventually];
-                            self.userRoamer = object;
-                            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-                            [currentInstallation addUniqueObject:self.userRoamer[@"Username"] forKey:@"channels"];
-                            [currentInstallation saveInBackground];
-                            [self showHomeScreen];
-                        } else {
-                            [self showAlertMessage:@"Error" message:@"Email or Password does not match"];
+                        BOOL isVerified = [user[@"emailVerified"] boolValue];
+                        if(isVerified == true){
+                            UserProfileHelper* helper = [UserProfileHelper sharedUserProfileHelper];
+                            PFObject* object = [helper checkIfUserExist:[self.mEmailTextField.text lowercaseString] password:self.mPasswordTextField.text];
+                            if(object != nil) {
+                                [object incrementKey:@"LoginCount"];
+                                object[@"EmailVerified"] = [NSNumber numberWithInteger:1];
+                                [object saveEventually];
+                                self.userRoamer = object;
+                                PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                                [currentInstallation addUniqueObject:self.userRoamer[@"Username"] forKey:@"channels"];
+                                [currentInstallation saveInBackground];
+                                [self showHomeScreen];
+                            } else {
+                                [self showAlertMessage:@"Error" message:@"Email or Password does not match"];
+                            }
+                            
                         }
+                        else{
+                            [self showAlertMessage:@"Error" message:@"Email address is not verified!  Check your inbox for verification email."];
+                        }
+                        
                     } else {
                         if(error.code == 101)
                             [self showAlertMessage:@"Error!" message:@"Incorrect user name or password."];
@@ -177,6 +185,7 @@ CGFloat animatedDistance;
 - (IBAction)onCreateAccountAction:(id)sender {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs removeObjectForKey:PREF_EMAIL];
+    [prefs removeObjectForKey:PREF_JOB];
     [prefs removeObjectForKey:PREF_PASSWORD];
     [prefs removeObjectForKey:PREF_USERNAME];
     [prefs removeObjectForKey:PREF_GENDER];
@@ -186,6 +195,7 @@ CGFloat animatedDistance;
     [prefs removeObjectForKey:PREF_AIRLINE];
     [prefs removeObjectForKey:PREF_HOTEL];
     [prefs removeObjectForKey:PREF_PROFILE_IMG];
+    [prefs removeObjectForKey:PREF_CURRENT_LOC_STRING];
     [prefs synchronize];
 
     [self performSegueWithIdentifier:@"performCreateAccount" sender:self];

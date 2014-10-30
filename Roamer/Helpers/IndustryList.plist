@@ -200,5 +200,11 @@
         <key>value</key>
         <string>32</string>
     </dict>
+    <dict>
+        <key>name</key>
+        <string>Other</string>
+        <key>value</key>
+        <string>33</string>
+    </dict>
 </array>
 </plist>

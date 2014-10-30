@@ -11,6 +11,7 @@
 + (NSArray *) HotelList;
 + (NSArray *) AirlineList;
 + (NSArray *) IndustryList;
++ (NSArray *) JobList;
 + (NSArray *) ProfileLocList;
 + (NSArray *) CurrentLocList;
 + (NSArray *) EventPostingList;

@@ -94,6 +94,7 @@ CGFloat animatedDistance;
     [pref setObject:self.userRoamer[@"Travel"] forKey:PREF_TRAVEL_LEVEL];
     [pref setObject:self.userRoamer[@"Airline"] forKey:PREF_AIRLINE];
     [pref setObject:self.userRoamer[@"Hotel"] forKey:PREF_HOTEL];
+    [pref setObject:self.userRoamer[@"Hotel"] forKey:PREF_JOB];
 
     PFFile *userImageFile = self.userRoamer[@"Pic"];
     if([self checkForNull:userImageFile] == nil) {

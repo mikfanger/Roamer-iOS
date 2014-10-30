@@ -13,15 +13,20 @@
 
 #define INDUSTRY_SELECT                 1
 #define LOCAL_SELECT                    2
+#define JOB_SELECT                      3
 
 @interface EditProfileStep2ViewCtrl () {
     NSArray *industryArray;
     NSArray *locationArray;
+    NSArray *jobArray;
+    
     CGRect  locSelectRect;
     CGRect  locSelectRectHidden;
     int industryInt;
     int locationInt;
     int currentButton;
+    int jobInt;
+    
 }
 
 @end
@@ -47,6 +52,9 @@
     industryArray = [DataSource IndustryList];
     self.mIndustryLabel.text = @"";
     
+    jobArray = [DataSource JobList];
+    self.mJobLabel.text = @"";
+    
     locSelectRect = self.mLocTableView.frame;
     locSelectRectHidden = CGRectMake(0, locSelectRect.origin.y + locSelectRect.size.height + 30, locSelectRect.size.width, locSelectRect.size.height);
     self.mLocTableView.frame = locSelectRectHidden;
@@ -62,6 +70,9 @@
     industryInt = [[prefs objectForKey:PREF_INDUSTRY] intValue];
     self.mIndustryLabel.text = [self getStringFromInt:industryInt arrayList:industryArray];
     
+    jobInt = [[prefs objectForKey:PREF_JOB] intValue];
+    self.mJobLabel.text = [self getStringFromInt:jobInt arrayList:jobArray];
+    
     if(self.profilePic != nil )
         self.mProfileImgView.image = self.profilePic;
 
@@ -75,11 +86,19 @@
         return;
     }
     
+    NSString* job = self.mJobLabel.text;
+    
+    if ([job isEqualToString:@""]) {
+        [self showAlertMessage:@"Error!" message:@"Job is required field!"];
+        return;
+    }
+    
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     [prefs setObject:[NSNumber numberWithInt:locationInt] forKey:PREF_REGION];
     [prefs setObject:[NSNumber numberWithInt:industryInt] forKey:PREF_INDUSTRY];
+    [prefs setObject:[NSNumber numberWithInt:jobInt] forKey:PREF_JOB];
     [prefs synchronize];
     
     [self performSegueWithIdentifier:@"showEditProfileStep3" sender:self];
@@ -101,6 +120,11 @@
     [self slideInLocViewAnimation];
 }
 
+- (IBAction)onJobSelectionAction:(id)sender {
+    currentButton = JOB_SELECT;
+    [self.mTableView reloadData];
+    [self slideInLocViewAnimation];
+}
 
 - (void) showAlertMessage:(NSString *)title message:(NSString *)msg {
     UIAlertView *errorAlert = [[UIAlertView alloc]
@@ -144,7 +168,10 @@
         self.mViewTitleLabel.text = @"Select Industry";
     } else if(currentButton == LOCAL_SELECT){
         self.mViewTitleLabel.text = @"Select Location";
+    } else if(currentButton == JOB_SELECT){
+        self.mViewTitleLabel.text = @"Select Job";
     }
+    
     self.mLocTableView.frame = locSelectRectHidden;
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.6f];
@@ -222,7 +249,10 @@
         return [industryArray count];
     } else if(currentButton == LOCAL_SELECT) {
         return [locationArray count];
+    } else if(currentButton == JOB_SELECT) {
+        return [jobArray count];
     }
+    
     return [industryArray count];
 }
 
@@ -235,6 +265,8 @@
         cell.textLabel.text = industryArray[indexPath.row][@"name"];
     } else if(currentButton == LOCAL_SELECT) {
         cell.textLabel.text = locationArray[indexPath.row][@"name"];
+    } else if(currentButton == JOB_SELECT) {
+        cell.textLabel.text = jobArray[indexPath.row][@"name"];
     }
     
     return cell;
@@ -248,28 +280,12 @@
     } else if(currentButton == LOCAL_SELECT) {
         self.mLocationLabel.text = locationArray[indexPath.row][@"name"];
         locationInt = [industryArray[indexPath.row][@"value"] intValue];
+    } else if(currentButton == JOB_SELECT) {
+        self.mJobLabel.text = jobArray[indexPath.row][@"name"];
+        jobInt = [jobArray[indexPath.row][@"value"] intValue];
     }
+    
     [self slideOutLocViewAnimation];
 }
-
-
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- static NSString *CellIdentifier = @"DataCell";
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
- 
- cell.textLabel.text = locationArray[indexPath.row][@"name"];
- 
- return cell;
- }
- 
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
- [tableView deselectRowAtIndexPath:indexPath animated:YES];
- self.mLocationLabel.text = locationArray[indexPath.row][@"name"];
- locationInt = [locationArray[indexPath.row][@"value"] intValue];
- [self slideOutLocViewAnimation];
- }
- */
 
 @end

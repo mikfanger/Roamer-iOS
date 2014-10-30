@@ -86,6 +86,8 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Roamer"];
     [query whereKey:@"CurrentLocation" equalTo:[NSNumber numberWithInt:locInt]];
     [query whereKey:@"objectId" notEqualTo:self.userRoamer.objectId];
+    [query whereKey:@"EmailVerified" equalTo:[NSNumber numberWithInt:1]];
+    
     query.limit = 1000;
     [[AppDelegate sharedDelegate] showFetchAlert];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
