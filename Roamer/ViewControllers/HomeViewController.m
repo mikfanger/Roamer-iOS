@@ -237,19 +237,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString* str = locationArray[indexPath.row][@"name"];
+    NSString* str = locationArray[indexPath.row] [@"name"];
     self.mCurrentLocation.text = str;
     int locationInt = [locationArray[indexPath.row][@"value"] intValue];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    NSLog(@"Name of city is %@", str);
-    
+
     [prefs setObject:str forKey:PREF_CURRENT_LOC_STRING];
-    //[prefs setInteger:locationInt forKey:PREF_CURRENT_LOC_INT];
-    //PFGeoPoint* geoPoint = locationArray[indexPath.row][@"latlong"];
-    //[prefs setDouble:geoPoint.latitude forKey:PREF_CURRENT_LOC_GEO_LAT];
-    //[prefs setDouble:geoPoint.longitude forKey:PREF_CURRENT_LOC_GEO_LONG];
+    [prefs setInteger:locationInt forKey:PREF_CURRENT_LOC_INT];
+    
     [prefs synchronize];
 
     NSString* objId =  [prefs objectForKey:PREF_USER_OBJECT_ID];

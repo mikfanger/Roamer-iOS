@@ -144,7 +144,9 @@ CGFloat animatedDistance;
                                 [currentInstallation addUniqueObject:self.userRoamer[@"Username"] forKey:@"channels"];
                                 [currentInstallation saveInBackground];
                                 [self showHomeScreen];
-                            } else {
+                            }
+                            
+                            else {
                                 [self showAlertMessage:@"Error" message:@"Email or Password does not match"];
                             }
                             

@@ -65,7 +65,7 @@
 
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
-    locationInt = [[prefs objectForKey:PREF_REGION] intValue];
+    locationInt = [[prefs objectForKey:PREF_REGION] intValue]+1;
     self.mLocationLabel.text = [self getStringFromInt:locationInt arrayList:locationArray];
     industryInt = [[prefs objectForKey:PREF_INDUSTRY] intValue];
     self.mIndustryLabel.text = [self getStringFromInt:industryInt arrayList:industryArray];

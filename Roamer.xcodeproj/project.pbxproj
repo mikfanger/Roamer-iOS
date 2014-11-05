@@ -487,8 +487,8 @@
 			children = (
 				38133DC719528728001DFF5C /* EditProfileStep1ViewCtrl.h */,
 				38133DC819528728001DFF5C /* EditProfileStep1ViewCtrl.m */,
-				38133DCA19528748001DFF5C /* EditProfileStep2ViewCtrl.h */,
 				38133DCB19528748001DFF5C /* EditProfileStep2ViewCtrl.m */,
+				38133DCA19528748001DFF5C /* EditProfileStep2ViewCtrl.h */,
 				38133DCD1952876D001DFF5C /* EditProfileStep3ViewCtrl.h */,
 				38133DCE1952876D001DFF5C /* EditProfileStep3ViewCtrl.m */,
 			);

@@ -146,7 +146,7 @@
                 [prefs setObject:[helper getCurrentLocString:loc] forKey:PREF_CURRENT_LOC_STRING];
                 [prefs synchronize];
 
-                [self showAlertMessage:@"Nice!" message:@"Roamer created successfully, returing to Login Screen.  A verification email has been sent, click the enclosed link to finsih the signup process."];
+                [self showAlertMessage:@"Nice!" message:@"Roamer created successfully, returning to Login Screen.  A verification email has been sent, click the enclosed link to finish the signup process!"];
             [self.delegate performFinishedAction:self];
         } else {
             [self showAlertMessage:@"Error!" message:@"Error Creating User."];

@@ -173,7 +173,7 @@ static UserProfileHelper *instanceOfUserProfileHelper;
     PFObject* returnValue = nil;
     PFQuery *query = [PFQuery queryWithClassName:@"Roamer"];
     [query whereKey:@"Email" equalTo:emailId];
-    [query whereKey:@"Password" equalTo:pwd];
+    //[query whereKey:@"Password" equalTo:pwd];
     [[AppDelegate sharedDelegate] showFetchAlert];
     NSArray* userList = [query findObjects];
     [[AppDelegate sharedDelegate] dissmissFetchAlert];
